@@ -1,0 +1,2552 @@
+[
+    {
+        "heuristic": "Visibility of system status",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates visibility of system status through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates visibility of system status through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Match between system and the real world",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates match between system and the real world through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates match between system and the real world through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "User control and freedom",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates user control and freedom through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates user control and freedom through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Consistency and standards",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates consistency and standards through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates consistency and standards through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Error prevention",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates error prevention through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates error prevention through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Recognition rather than recall",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates recognition rather than recall through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates recognition rather than recall through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Flexibility and efficiency of use",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates flexibility and efficiency of use through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates flexibility and efficiency of use through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Aesthetic and minimalist design",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates aesthetic and minimalist design through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates aesthetic and minimalist design through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Help users recognize, diagnose, and recover from errors",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates help users recognize, diagnose, and recover from errors through clear interface behavior"
+            }
+        ]
+    },
+    {
+        "heuristic": "Help and documentation",
+        "items": [
+            {
+                "sistema": "Google Search",
+                "url": "https://google.com",
+                "emphasis": "Google Search demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Gmail",
+                "url": "https://mail.google.com",
+                "emphasis": "Gmail demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Amazon",
+                "url": "https://amazon.com",
+                "emphasis": "Amazon demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "YouTube",
+                "url": "https://youtube.com",
+                "emphasis": "YouTube demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Spotify",
+                "url": "https://spotify.com",
+                "emphasis": "Spotify demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Netflix",
+                "url": "https://netflix.com",
+                "emphasis": "Netflix demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Facebook",
+                "url": "https://facebook.com",
+                "emphasis": "Facebook demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Instagram",
+                "url": "https://instagram.com",
+                "emphasis": "Instagram demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Twitter (X)",
+                "url": "https://x.com",
+                "emphasis": "Twitter (X) demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "LinkedIn",
+                "url": "https://linkedin.com",
+                "emphasis": "LinkedIn demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Slack",
+                "url": "https://slack.com",
+                "emphasis": "Slack demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Discord",
+                "url": "https://discord.com",
+                "emphasis": "Discord demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Microsoft Teams",
+                "url": "https://teams.microsoft.com",
+                "emphasis": "Microsoft Teams demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Zoom",
+                "url": "https://zoom.us",
+                "emphasis": "Zoom demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Google Meet",
+                "url": "https://meet.google.com",
+                "emphasis": "Google Meet demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Dropbox",
+                "url": "https://dropbox.com",
+                "emphasis": "Dropbox demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Google Drive",
+                "url": "https://drive.google.com",
+                "emphasis": "Google Drive demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "OneDrive",
+                "url": "https://onedrive.live.com",
+                "emphasis": "OneDrive demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "WeTransfer",
+                "url": "https://wetransfer.com",
+                "emphasis": "WeTransfer demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Mega",
+                "url": "https://mega.nz",
+                "emphasis": "Mega demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "GitHub",
+                "url": "https://github.com",
+                "emphasis": "GitHub demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "GitLab",
+                "url": "https://gitlab.com",
+                "emphasis": "GitLab demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Bitbucket",
+                "url": "https://bitbucket.org",
+                "emphasis": "Bitbucket demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Jira",
+                "url": "https://atlassian.com/software/jira",
+                "emphasis": "Jira demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Trello",
+                "url": "https://trello.com",
+                "emphasis": "Trello demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Asana",
+                "url": "https://asana.com",
+                "emphasis": "Asana demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "ClickUp",
+                "url": "https://clickup.com",
+                "emphasis": "ClickUp demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Monday.com",
+                "url": "https://monday.com",
+                "emphasis": "Monday.com demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Notion",
+                "url": "https://notion.so",
+                "emphasis": "Notion demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Airtable",
+                "url": "https://airtable.com",
+                "emphasis": "Airtable demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Canva",
+                "url": "https://canva.com",
+                "emphasis": "Canva demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Figma",
+                "url": "https://figma.com",
+                "emphasis": "Figma demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Adobe Photoshop Web",
+                "url": "https://photoshop.adobe.com",
+                "emphasis": "Adobe Photoshop Web demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Pixlr",
+                "url": "https://pixlr.com",
+                "emphasis": "Pixlr demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Remove.bg",
+                "url": "https://remove.bg",
+                "emphasis": "Remove.bg demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "CapCut",
+                "url": "https://capcut.com",
+                "emphasis": "CapCut demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Descript",
+                "url": "https://descript.com",
+                "emphasis": "Descript demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "VEED",
+                "url": "https://veed.io",
+                "emphasis": "VEED demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "InVideo",
+                "url": "https://invideo.io",
+                "emphasis": "InVideo demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Runway",
+                "url": "https://runwayml.com",
+                "emphasis": "Runway demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Shopify",
+                "url": "https://shopify.com",
+                "emphasis": "Shopify demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Stripe",
+                "url": "https://stripe.com",
+                "emphasis": "Stripe demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "PayPal",
+                "url": "https://paypal.com",
+                "emphasis": "PayPal demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Mercado Livre",
+                "url": "https://mercadolivre.com.br",
+                "emphasis": "Mercado Livre demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "iFood",
+                "url": "https://ifood.com.br",
+                "emphasis": "iFood demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Uber",
+                "url": "https://uber.com",
+                "emphasis": "Uber demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "99",
+                "url": "https://99app.com",
+                "emphasis": "99 demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Airbnb",
+                "url": "https://airbnb.com",
+                "emphasis": "Airbnb demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Booking.com",
+                "url": "https://booking.com",
+                "emphasis": "Booking.com demonstrates help and documentation through clear interface behavior"
+            },
+            {
+                "sistema": "Expedia",
+                "url": "https://expedia.com",
+                "emphasis": "Expedia demonstrates help and documentation through clear interface behavior"
+            }
+        ]
+    }
+]

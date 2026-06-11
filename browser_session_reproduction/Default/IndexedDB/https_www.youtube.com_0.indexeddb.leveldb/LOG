@@ -1,0 +1,4 @@
+2026/03/30-20:50:26.254 2f2df Reusing MANIFEST /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/30-20:50:26.255 2f2df Recovering log #24
+2026/03/30-20:50:26.257 2f2df Reusing old log /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000024.log 
+2026/03/30-20:50:26.257 2f2df Delete type=2 #22

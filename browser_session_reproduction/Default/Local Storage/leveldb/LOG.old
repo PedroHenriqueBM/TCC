@@ -1,0 +1,16 @@
+2026/03/30-20:36:49.112 26d58 Reusing MANIFEST /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/Local Storage/leveldb/MANIFEST-000001
+2026/03/30-20:36:49.119 26d58 Recovering log #23
+2026/03/30-20:36:49.120 26d58 Level-0 table #26: started
+2026/03/30-20:36:49.125 26d58 Level-0 table #26: 64152 bytes OK
+2026/03/30-20:36:49.125 26d58 Recovering log #26
+2026/03/30-20:36:49.125 26d58 Reusing old log /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/Local Storage/leveldb/000026.log 
+2026/03/30-20:36:49.129 26d58 Delete type=0 #23
+2026/03/30-20:36:49.131 26d5e Compacting 4@0 + 1@1 files
+2026/03/30-20:36:49.142 26d5e Generated table #27@0: 18 keys, 35774 bytes
+2026/03/30-20:36:49.143 26d5e Compacted 4@0 + 1@1 files => 35774 bytes
+2026/03/30-20:36:49.148 26d5e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/30-20:36:49.148 26d5e Delete type=2 #19
+2026/03/30-20:36:49.148 26d5e Delete type=2 #24
+2026/03/30-20:36:49.148 26d5e Delete type=2 #16
+2026/03/30-20:36:49.148 26d5e Delete type=2 #21
+2026/03/30-20:36:49.148 26d5e Delete type=2 #26

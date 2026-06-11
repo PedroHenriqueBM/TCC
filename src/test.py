@@ -1,0 +1,5 @@
+#from Model.UsabilityInspection.Services.CreateFunctionalityVideoRecordService.create_functionality_video_record import create_functionality_video_record
+from Model.UsabilityInspection.Services.ExecuteUsabilityInspectionService.execute_usability_inspection import execute_usability_inspection
+
+#path = create_functionality_video_record("001")
+result = execute_usability_inspection("001")
