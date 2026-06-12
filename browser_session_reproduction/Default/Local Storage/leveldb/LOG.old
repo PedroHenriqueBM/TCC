@@ -1,6 +1,0 @@
-2026/03/30-20:50:22.424 2f30c Reusing MANIFEST /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/Local Storage/leveldb/MANIFEST-000001
-2026/03/30-20:50:22.428 2f30c Recovering log #26
-2026/03/30-20:50:22.430 2f30c Reusing old log /home/pedro/Área de Trabalho/TCC/browser_session_reproduction/Default/Local Storage/leveldb/000026.log 
-2026/03/30-20:50:32.084 2f30c Level-0 table #30: started
-2026/03/30-20:50:32.088 2f30c Level-0 table #30: 97365 bytes OK
-2026/03/30-20:50:32.092 2f30c Delete type=0 #26

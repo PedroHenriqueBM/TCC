@@ -1,0 +1,63 @@
+# Credenciais e configurações sensíveis
+.env
+.env.*
+!.env.example
+.app_settings
+.flask_secret_key
+*.key
+*.pem
+secrets.json
+config.local.*
+
+# Ambiente virtual Python
+.venv/
+venv/
+env/
+ENV/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Banco de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# Armazenamento gerado em runtime
+src/Storage/*
+!src/Storage/.gitkeep
+
+# Sessão de browser (Playwright/Chrome profile)
+browser_session_reproduction/
+test-results/
+playwright-report/
+
+# Arquivos de vídeo e mídia gerados
+*.webm
+*.mp4
+*.avi
+
+# Arquivos gerados/compilados
+*.pyc
+*.pyd
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Claude Code (configurações locais)
+.claude/settings.local.json
+
+# Logs
+*.log
+logs/
