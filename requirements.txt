@@ -1,0 +1,6 @@
+openai
+playwright
+httpx
+flask
+python-dotenv
+reportlab

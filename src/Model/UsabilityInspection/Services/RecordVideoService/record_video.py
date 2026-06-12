@@ -1,190 +1,193 @@
-import asyncio
+import subprocess
+import sys
 import shutil
 import os
+import re
 import time
 from pathlib import Path
 from PIL import Image
-import imageio.v3 as iio
-import cv2
-from playwright.async_api import async_playwright
 
-# Silenciar logs chatos de sistema
 os.environ["OPENCV_LOG_LEVEL"] = "OFF"
 os.environ["IMAGEIO_FFMPEG_LOG_LEVEL"] = "quiet"
 
-try:
-    from playwright_stealth import stealth_async as apply_stealth
-except ImportError:
+
+def _inject_video_recording(content: str, video_dir: str) -> str:
+    """Inject record_video_dir into browser.new_context() calls in generated script."""
+    vd = video_dir.replace("\\", "/")
+    size = '{"width": 1280, "height": 720}'
+
+    # Make headless for automated replay
+    content = re.sub(r"headless\s*=\s*False", "headless=True", content)
+    # Speed up replay
+    content = re.sub(r"slow_mo\s*=\s*\d+", "slow_mo=0", content)
+
+    # Pattern 1: empty new_context()
+    content = re.sub(
+        r"await\s+browser\.new_context\(\s*\)",
+        f'await browser.new_context(record_video_dir=r"{vd}", record_video_size={size})',
+        content,
+    )
+
+    # Pattern 2: new_context( with existing args — inject at start
+    # Negative lookahead avoids double-injection from Pattern 1
+    content = re.sub(
+        r"await\s+browser\.new_context\((?!record_video_dir)",
+        f'await browser.new_context(record_video_dir=r"{vd}", record_video_size={size}, ',
+        content,
+    )
+
+    return content
+
+
+def _process_videos_to_pdf(output_dir: Path, video_files: list, functionality_id: str) -> str:
+    """Extract frames from WebM files and save as PDF."""
     try:
-        from playwright_stealth import stealth as apply_stealth
+        import imageio.v3 as iio
     except ImportError:
-        apply_stealth = None
+        iio = None
+    try:
+        import cv2
+    except ImportError:
+        cv2 = None
 
-def _process_videos_in_exact_order(output_dir: Path, ordered_video_names: list, functionality_id: str, every_seconds: float = 0.2) -> str:
-    """Processa a lista exata de vídeos capturados na ordem da operação."""
     all_frames = []
-    MAX_RES = (1280, 1280) 
+    MAX_RES = (1280, 1280)
+    print(f"  -> Consolidando {len(video_files)} vídeos em PDF...")
 
-    print(f"-> Consolidando {len(ordered_video_names)} vídeos na ordem da operação...")
+    for video_path in video_files:
+        video_abs = str(video_path.resolve())
+        print(f"     - {video_path.name}")
+        extracted = False
 
-    for video_name in ordered_video_names:
-        video_path = output_dir / video_name
-        # Aguarda o arquivo aparecer ou ter tamanho se necessário (retry rápido)
-        for _ in range(5):
-            if video_path.exists() and video_path.stat().st_size > 0:
-                break
-            time.sleep(1)
-
-        if not video_path.exists() or video_path.stat().st_size == 0:
-            print(f"   ! Aviso: Vídeo {video_name} não encontrado ou vazio. Pulando...")
-            continue
-            
-        video_abs_path = os.path.abspath(str(video_path))
-        print(f"   - Extraindo frames da aba: {video_name}")
-        
-        try:
-            for i, frame in enumerate(iio.imiter(video_abs_path, plugin="pyav")):
-                if i % 6 == 0: 
-                    img = Image.fromarray(frame).convert("RGB")
-                    img.thumbnail(MAX_RES, Image.Resampling.LANCZOS)
-                    all_frames.append(img)
-        except Exception:
+        if iio is not None:
             try:
-                cap = cv2.VideoCapture(video_abs_path)
+                for i, frame in enumerate(iio.imiter(video_abs, plugin="pyav")):
+                    if i % 6 == 0:
+                        img = Image.fromarray(frame).convert("RGB")
+                        img.thumbnail(MAX_RES, Image.Resampling.LANCZOS)
+                        all_frames.append(img)
+                extracted = True
+            except Exception:
+                pass
+
+        if not extracted and cv2 is not None:
+            try:
+                cap = cv2.VideoCapture(video_abs)
                 fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
-                step = max(1, int(fps * every_seconds))
+                step = max(1, int(fps * 0.2))
                 count = 0
                 while True:
                     ret, frame = cap.read()
-                    if not ret: break
-                    if count % step == 0 and frame is not None:
+                    if not ret:
+                        break
+                    if count % step == 0:
                         img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)).convert("RGB")
                         img.thumbnail(MAX_RES, Image.Resampling.LANCZOS)
                         all_frames.append(img)
                     count += 1
                 cap.release()
-            except Exception: pass
+            except Exception:
+                pass
 
     if not all_frames:
-        raise ValueError("Nenhum frame extraído. Verifique se as janelas foram gravadas.")
+        raise ValueError("Nenhum frame extraído dos vídeos.")
 
     pdf_name = f"execuction_recording_{functionality_id}.pdf"
     pdf_path = output_dir / pdf_name
-    
-    print(f"-> Gerando PDF: {pdf_name} ({len(all_frames)} páginas)")
+    print(f"  -> Gerando PDF: {pdf_name} ({len(all_frames)} frames)")
     all_frames[0].save(
         str(pdf_path),
         save_all=True,
         append_images=all_frames[1:],
         resolution=100.0,
-        quality=75
+        quality=75,
     )
     return str(pdf_path)
 
-async def record_video(path_to_save_video: str, url_to_search: str, functionality_id: str):
+
+def record_video(path_to_save_video: str, url_to_search: str, functionality_id: str) -> str | None:
+    """
+    Two-phase recording:
+
+    Phase 1 — playwright codegen: opens a browser where the user performs the
+    functionality naturally. Every interaction (click, fill, keyboard, navigation)
+    is captured and saved as a Python-async Playwright script.
+
+    Phase 2 — automated replay: the generated script is executed headlessly with
+    record_video_dir injected. The recorded WebM is converted to PDF frames for
+    the usability inspection agent.
+    """
     output_dir = Path(path_to_save_video).resolve()
     script_name = f"execuction_recording_{functionality_id}.py"
-    
-    if output_dir.exists():
-        shutil.rmtree(output_dir, ignore_errors=True)
+    script_path = output_dir / script_name
+
+    shutil.rmtree(output_dir, ignore_errors=True)
     output_dir.mkdir(parents=True, exist_ok=True)
-    
-    video_filenames_in_order = []
-    last_url_recorded = ""
 
-    actions_log = [
-        "import asyncio", "from playwright.async_api import async_playwright",
-        "try: from playwright_stealth import stealth_async", "except: stealth_async = None",
-        "", "async def run():", "    async with async_playwright() as p:",
-        "        user_data = './browser_session_reproduction'",
-        "        context = await p.chromium.launch_persistent_context(",
-        "            user_data, headless=False, slow_mo=150,",
-        "            args=['--disable-blink-features=AutomationControlled']",
-        "        )",
-        "        page = context.pages[0] if context.pages else await context.new_page()",
-        "        if stealth_async: await stealth_async(page)",
-        f"        await page.goto('{url_to_search}', wait_until='load')"
-    ]
+    # ── Phase 1: capture all interactions with playwright codegen ─────────────
+    print("\n" + "=" * 50)
+    print("   GRAVAÇÃO ATIVA")
+    print("   Realize a funcionalidade no navegador.")
+    print("   Feche a janela para finalizar.")
+    print("=" * 50 + "\n")
 
-    async with async_playwright() as p:
-        user_data_dir = output_dir / "browser_session"
-        context = await p.chromium.launch_persistent_context(
-            user_data_dir=str(user_data_dir),
-            headless=False,
-            slow_mo=150,
-            args=["--disable-blink-features=AutomationControlled"],
-            record_video_dir=str(output_dir),
-            record_video_size={"width": 1280, "height": 720}
-        )
+    subprocess.run(
+        [
+            sys.executable, "-m", "playwright", "codegen",
+            "--browser=chromium",
+            "--target=python-async",
+            f"--output={script_path}",
+            url_to_search,
+        ],
+        check=False,
+    )
 
-        async def track_video(page_obj):
-            """Registra o vídeo da página na lista global."""
-            if page_obj.video:
-                v_path = await page_obj.video.path()
-                v_name = Path(v_path).name
-                if v_name not in video_filenames_in_order:
-                    video_filenames_in_order.append(v_name)
+    if not script_path.exists() or script_path.stat().st_size == 0:
+        raise ValueError("Gravação cancelada — nenhum script foi gerado.")
 
-        async def setup_page(page_obj):
-            nonlocal last_url_recorded
-            # Tenta pegar o vídeo imediatamente e agenda nova tentativa no fechamento
-            await track_video(page_obj)
-            page_obj.on("close", lambda p: asyncio.create_task(track_video(p)))
+    print("  -> Script de interações gerado com sucesso.")
 
-            if apply_stealth and callable(apply_stealth):
-                await apply_stealth(page_obj)
-            await page_obj.add_init_script("delete navigator.__proto__.webdriver")
+    # ── Phase 2: replay with video recording → PDF ────────────────────────────
+    print("  -> Gerando PDF de usabilidade (reprodução automática)...")
 
-            async def on_nav(frame):
-                nonlocal last_url_recorded
-                url = frame.url
-                if frame == page_obj.main_frame and url.startswith("http") and url != last_url_recorded:
-                    actions_log.append(f"        await page.goto('{url}', wait_until='load')")
-                    last_url_recorded = url
-            page_obj.on("framenavigated", on_nav)
+    video_dir = output_dir / "_replay_video"
+    video_dir.mkdir(exist_ok=True)
 
-        context.on("page", setup_page)
-        main_page = context.pages[0] if context.pages else await context.new_page()
-        await setup_page(main_page)
+    script_content = script_path.read_text(encoding="utf-8")
+    replay_content = _inject_video_recording(script_content, str(video_dir))
 
-        try:
-            await main_page.goto(url_to_search, wait_until="load")
-            print("\n" + "="*40 + "\n   GRAVAÇÃO EM ORDEM ATIVA\n   Feche o navegador para processar\n" + "="*40 + "\n")
-            
-            while any(not pg.is_closed() for pg in context.pages):
-                # Mantém varredura ativa para garantir que pegamos abas rápidas
-                for pg in context.pages:
-                    await track_video(pg)
-                await asyncio.sleep(1)
-            
-        except Exception: pass
-        finally:
-            # Força o registro de vídeos das páginas antes de fechar o contexto
-            for pg in context.pages:
-                await track_video(pg)
-                try: await pg.close()
-                except: pass
-            await asyncio.sleep(2) # Buffer para o Playwright salvar o último webm
-            try: await context.close()
-            except: pass
-
-    # Salva o script
-    actions_log.extend(["", "        await context.close()", "asyncio.run(run())"])
-    with open(output_dir / script_name, "w") as f:
-        f.write("\n".join(actions_log))
+    replay_path = output_dir / "_replay.py"
+    replay_path.write_text(replay_content, encoding="utf-8")
 
     try:
-        # Pausa maior para o SO liberar os descritores de arquivo
-        time.sleep(10) 
-        final_pdf_path = _process_videos_in_exact_order(output_dir, video_filenames_in_order, functionality_id)
-        
-        # Faxina Final
-        for item in output_dir.iterdir():
-            if item.name not in [Path(final_pdf_path).name, script_name]:
-                if item.is_file(): item.unlink()
-                elif item.is_dir(): shutil.rmtree(item, ignore_errors=True)
-                
-        return str(final_pdf_path)
+        result = subprocess.run(
+            [sys.executable, str(replay_path)],
+            timeout=180,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0 and result.stderr:
+            print(f"  -> Aviso no replay: {result.stderr[:300]}")
+    except subprocess.TimeoutExpired:
+        print("  -> Timeout no replay — processando frames disponíveis")
     except Exception as e:
-        print(f"-> Erro final: {e}")
-        return None
+        print(f"  -> Erro no replay: {e}")
+
+    time.sleep(5)  # wait for Playwright to flush WebM files
+
+    video_files = sorted(video_dir.glob("*.webm"))
+
+    pdf_path = None
+    if video_files:
+        try:
+            pdf_path = _process_videos_to_pdf(output_dir, video_files, functionality_id)
+        except Exception as e:
+            print(f"  -> Erro ao gerar PDF: {e}")
+    else:
+        print("  -> Nenhum vídeo capturado no replay — PDF não gerado.")
+
+    # Cleanup temporary replay artefacts
+    shutil.rmtree(video_dir, ignore_errors=True)
+    replay_path.unlink(missing_ok=True)
+
+    return pdf_path

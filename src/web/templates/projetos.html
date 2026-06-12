@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% set active_page = "projetos" %}
+
+{% block title %}Projetos — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-folder2-open me-2"></i>Projetos</div>
+
+<!-- Formulário de criação -->
+<div class="card mb-4">
+  <div class="card-header" data-bs-toggle="collapse" data-bs-target="#formCriar" style="cursor:pointer">
+    <i class="bi bi-plus-circle me-2"></i>Criar novo projeto
+    <i class="bi bi-chevron-down float-end"></i>
+  </div>
+  <div class="collapse {% if not projects or form_data %}show{% endif %}" id="formCriar">
+    <div class="card-body">
+      <p class="text-muted small">O agente de conformidade valida o nome e a descrição antes de salvar.</p>
+      <form method="post" action="/projetos" data-loading="Validando com agente de conformidade…">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+          <input name="name" class="form-control" placeholder="Sistema de Gestão de Tarefas"
+            value="{{ form_data.name if form_data else '' }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Descrição <span class="text-danger">*</span></label>
+          <textarea name="description" class="form-control" rows="2"
+            placeholder="Descreva o objetivo do sistema em 1-3 frases." required>{{ form_data.description if form_data else '' }}</textarea>
+        </div>
+        <button class="btn btn-primary"><i class="bi bi-plus me-1"></i>Criar projeto</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de projetos -->
+{% if projects %}
+<div class="row g-3">
+  {% for p in projects %}
+  <div class="col-md-6">
+    <div class="card h-100 {% if session.project_id == p.id %}border-success border-2{% endif %}">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h6 class="card-title mb-0 fw-bold">
+            {% if session.project_id == p.id %}<i class="bi bi-check-circle-fill text-success me-1"></i>{% endif %}
+            {{ p.name }}
+          </h6>
+          <div class="d-flex gap-1">
+            <button class="btn btn-sm btn-outline-secondary"
+              data-bs-toggle="modal" data-bs-target="#modalEdit{{ loop.index }}">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-danger"
+              data-bs-toggle="modal" data-bs-target="#modalDel{{ loop.index }}">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+        <p class="text-muted small mb-2">{{ p.description }}</p>
+        <small class="text-muted"><i class="bi bi-clock me-1"></i>{{ p.get('created_at', '')[:10] }}</small>
+      </div>
+      <div class="card-footer bg-transparent d-flex gap-2">
+        <form method="post" action="/projetos/{{ p.id }}/ativar" class="flex-grow-1">
+          <button class="btn btn-sm w-100 {% if session.project_id == p.id %}btn-success{% else %}btn-outline-primary{% endif %}"
+            {% if session.project_id == p.id %}disabled{% endif %}>
+            {% if session.project_id == p.id %}<i class="bi bi-check me-1"></i>Ativo{% else %}Selecionar{% endif %}
+          </button>
+        </form>
+        <a href="/projetos/{{ p.id }}/relatorio"
+           class="btn btn-sm btn-outline-danger"
+           title="Baixar relatório completo em PDF">
+          <i class="bi bi-file-earmark-pdf"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Editar -->
+  <div class="modal fade" id="modalEdit{{ loop.index }}" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="post" action="/projetos/{{ p.id }}/editar"
+          data-loading="Validando com agente de conformidade…">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="bi bi-pencil me-2"></i>Editar projeto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+              <input name="name" class="form-control" value="{{ p.name }}" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Descrição <span class="text-danger">*</span></label>
+              <textarea name="description" class="form-control" rows="3" required>{{ p.description }}</textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary">Salvar alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Deletar -->
+  <div class="modal fade" id="modalDel{{ loop.index }}" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Confirmar exclusão</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Excluir <strong>{{ p.name }}</strong>?</p>
+          <p class="text-danger small">Isso também excluirá todas as personas, requisitos, critérios e histórico do projeto.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <form method="post" action="/projetos/{{ p.id }}/deletar">
+            <button class="btn btn-danger btn-sm">Excluir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center text-muted py-5">
+  <i class="bi bi-folder2-open fs-1 d-block mb-2"></i>
+  Nenhum projeto cadastrado ainda.
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% set active_page = "teste" %}
+
+{% block title %}Teste de Sistema — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-bug me-2"></i>Teste de Sistema
+  {% if req_name %}<small class="fs-6 text-muted fw-normal ms-2">{{ req_name|truncate(60, True) }}</small>{% endif %}
+</div>
+
+{% if not req_id %}
+<div class="card" style="max-width:520px">
+  <div class="card-header"><i class="bi bi-arrow-right-circle me-2"></i>Selecionar contexto</div>
+  <div class="card-body">
+    <form method="post" action="/sidebar/selecionar">
+      <input type="hidden" name="next" value="/teste">
+      <div class="mb-3">
+        <label class="form-label fw-semibold small">Projeto</label>
+        <select name="project_id" class="form-select form-select-sm sidebar-select" required
+          onchange="this.form.submit()">
+          <option value="">— selecione —</option>
+          {% for p in sidebar_projects %}
+          <option value="{{ p.id }}" {% if p.id == session.get('project_id') %}selected{% endif %}>{{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% if sidebar_reqs %}
+      <div class="mb-3">
+        <label class="form-label fw-semibold small">Requisito Funcional</label>
+        <select name="requirement_id" class="form-select form-select-sm sidebar-select" required>
+          <option value="">— selecione —</option>
+          {% for r in sidebar_reqs %}
+          <option value="{{ r.id }}">{{ r.name|truncate(60, True) }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm w-100">
+        <i class="bi bi-arrow-right me-1"></i>Continuar
+      </button>
+      {% else %}
+      <div class="alert alert-warning py-2 small">
+        <i class="bi bi-exclamation-triangle me-1"></i>
+        Nenhum requisito cadastrado neste projeto.
+        <a href="/requisitos">Cadastrar requisito</a>.
+      </div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% else %}
+
+<div class="row g-4">
+  <!-- Coluna esquerda -->
+  <div class="col-md-5">
+
+    <!-- Status do script -->
+    <div class="card mb-3">
+      <div class="card-header"><i class="bi bi-file-code me-2"></i>Script de teste</div>
+      <div class="card-body">
+        {% if script_exists %}
+        <div class="alert alert-success py-2 small mb-2">
+          <i class="bi bi-check-circle me-1"></i>Script encontrado.
+        </div>
+        {% if script_content %}
+        <pre class="code-block mb-2" style="max-height:180px">{{ script_content }}</pre>
+        {% endif %}
+        <a href="/teste/download/script" class="btn btn-sm btn-outline-secondary w-100 mb-1">
+          <i class="bi bi-download me-1"></i>Baixar script (.py)
+        </a>
+        {% else %}
+        <div class="alert alert-warning py-2 small">
+          <i class="bi bi-exclamation-triangle me-1"></i>
+          Script não encontrado. Execute a gravação em <a href="/inspecao">Inspeção de Usabilidade</a> primeiro.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Executar teste -->
+    <div class="card">
+      <div class="card-header"><i class="bi bi-play-circle me-2"></i>Executar teste</div>
+      <div class="card-body">
+        {% if not script_exists %}
+        <p class="text-muted small">Script não disponível. Realize a gravação primeiro.</p>
+        {% else %}
+        <form method="post" action="/teste/executar"
+          data-loading="Executando script com Playwright… pode levar até 90 segundos.">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Comentário do tester (opcional)</label>
+            <textarea name="tester_comment" class="form-control form-control-sm" rows="3"
+              placeholder="Observações para o agente considerar na avaliação."></textarea>
+          </div>
+          <button class="btn btn-primary w-100">
+            <i class="bi bi-play-fill me-1"></i>Executar teste
+          </button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Coluna direita: histórico -->
+  <div class="col-md-7">
+
+    {% if execucoes %}
+    <!-- Resumo -->
+    <div class="row g-2 mb-3">
+      <div class="col-4">
+        <div class="card text-center">
+          <div class="card-body py-2">
+            <div class="fs-4 fw-bold">{{ execucoes|length }}</div>
+            <div class="text-muted small">Total</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card text-center border-success">
+          <div class="card-body py-2">
+            <div class="fs-4 fw-bold text-success">{{ passed_count }}</div>
+            <div class="text-muted small">Passou ✅</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card text-center border-danger">
+          <div class="card-body py-2">
+            <div class="fs-4 fw-bold text-danger">{{ failed_count }}</div>
+            <div class="text-muted small">Falhou ❌</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="card">
+      <div class="card-header"><i class="bi bi-clock-history me-2"></i>Histórico de execuções ({{ execucoes|length }})</div>
+      <div class="card-body p-0">
+        {% if execucoes %}
+        <div class="accordion accordion-flush" id="testAcc">
+          {% for ex in execucoes %}
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button {% if not loop.first %}collapsed{% endif %} small py-2"
+                type="button" data-bs-toggle="collapse" data-bs-target="#tex{{ loop.index }}">
+                {% if ex.passed %}
+                <span class="badge bg-success me-2">PASSOU</span>
+                {% else %}
+                <span class="badge bg-danger me-2">FALHOU</span>
+                {% endif %}
+                Execução {{ execucoes|length - loop.index0 }}
+                &nbsp;<span class="text-muted">{{ ex.created_at[:19]|replace('T',' ') }}</span>
+              </button>
+            </h2>
+            <div id="tex{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}">
+              <div class="accordion-body small">
+                {% if ex.result_text %}
+                  {# Split evaluation from script output for better display #}
+                  {% set parts = ex.result_text.split('\n\n=== SAÍDA DO SCRIPT ===\n') %}
+                  {% set evaluation_block = parts[0].replace('=== AVALIAÇÃO DO AGENTE ===\n', '') %}
+                  {% set script_block = parts[1] if parts|length > 1 else '' %}
+
+                  <!-- AI Evaluation — always prominent -->
+                  <div class="p-2 rounded mb-2"
+                       style="background:{% if ex.passed %}#f0fdf4{% else %}#fef2f2{% endif %};
+                              border-left:3px solid {% if ex.passed %}#22c55e{% else %}#ef4444{% endif %}">
+                    <div class="fw-semibold mb-1" style="font-size:.75rem;color:{% if ex.passed %}#166534{% else %}#991b1b{% endif %}">
+                      <i class="bi bi-robot me-1"></i>AVALIAÇÃO DO AGENTE
+                    </div>
+                    <div style="white-space:pre-wrap;font-size:.82rem">{{ evaluation_block.strip() }}</div>
+                  </div>
+
+                  <!-- Script output (collapsed by default) -->
+                  {% if script_block %}
+                  <details class="mb-2">
+                    <summary class="text-muted" style="cursor:pointer;font-size:.75rem">Saída do script</summary>
+                    <pre style="white-space:pre-wrap;font-size:.78rem;max-height:160px;overflow-y:auto;margin-top:.5rem">{{ script_block[:2000] }}</pre>
+                  </details>
+                  {% endif %}
+
+                  <a href="/teste/download/resultado/{{ ex.id }}"
+                     class="btn btn-sm btn-outline-secondary me-2">
+                    <i class="bi bi-download me-1"></i>Baixar resultado (.txt)
+                  </a>
+                {% else %}
+                  <span class="text-muted">(sem avaliação registrada)</span>
+                {% endif %}
+                {% if ex.video_path %}
+                <div class="mt-3">
+                  <div class="fw-semibold mb-1 text-muted" style="font-size:.75rem;">VÍDEO DA EXECUÇÃO</div>
+                  <video controls class="w-100 rounded" style="max-height:320px;background:#000">
+                    <source src="/teste/video/{{ ex.id }}" type="video/webm">
+                    Seu navegador não suporta o elemento &lt;video&gt;.
+                  </video>
+                  <a href="/teste/video/{{ ex.id }}?download=1"
+                     class="btn btn-sm btn-outline-secondary mt-2">
+                    <i class="bi bi-camera-video me-1"></i>Baixar vídeo (.webm)
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="p-3 text-muted small text-center">Nenhum teste executado ainda.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if comments %}
+    <div class="card mt-3">
+      <div class="card-header"><i class="bi bi-chat-left-text me-2"></i>Avaliações do agente</div>
+      <div class="list-group list-group-flush">
+        {% for c in comments %}
+        <div class="list-group-item small">
+          <div class="fw-semibold text-muted mb-1">{{ c.author }} · {{ c.created_at[:10] }}</div>
+          <div style="white-space:pre-wrap">{{ c.content }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endif %}
+{% endblock %}

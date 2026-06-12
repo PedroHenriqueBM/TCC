@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% set active_page = "inspecao" %}
+
+{% block title %}Inspeção de Usabilidade — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-search me-2"></i>Inspeção de Usabilidade
+  {% if req_name %}<small class="fs-6 text-muted fw-normal ms-2">{{ req_name|truncate(60, True) }}</small>{% endif %}
+</div>
+
+{% if not req_id %}
+<div class="card" style="max-width:520px">
+  <div class="card-header"><i class="bi bi-arrow-right-circle me-2"></i>Selecionar contexto</div>
+  <div class="card-body">
+    <form method="post" action="/sidebar/selecionar">
+      <input type="hidden" name="next" value="/inspecao">
+      <div class="mb-3">
+        <label class="form-label fw-semibold small">Projeto</label>
+        <select name="project_id" class="form-select form-select-sm sidebar-select" required
+          onchange="this.form.submit()">
+          <option value="">— selecione —</option>
+          {% for p in sidebar_projects %}
+          <option value="{{ p.id }}" {% if p.id == session.get('project_id') %}selected{% endif %}>{{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% if sidebar_reqs %}
+      <div class="mb-3">
+        <label class="form-label fw-semibold small">Requisito Funcional</label>
+        <select name="requirement_id" class="form-select form-select-sm sidebar-select" required>
+          <option value="">— selecione —</option>
+          {% for r in sidebar_reqs %}
+          <option value="{{ r.id }}">{{ r.name|truncate(60, True) }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm w-100">
+        <i class="bi bi-arrow-right me-1"></i>Continuar
+      </button>
+      {% else %}
+      <div class="alert alert-warning py-2 small">
+        <i class="bi bi-exclamation-triangle me-1"></i>
+        Nenhum requisito cadastrado neste projeto.
+        <a href="/requisitos">Cadastrar requisito</a>.
+      </div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% else %}
+
+<div class="row g-4">
+  <!-- Coluna esquerda: ações -->
+  <div class="col-md-5">
+
+    <!-- Passo 1: Gravação -->
+    <div class="card mb-3">
+      <div class="card-header"><i class="bi bi-camera-video me-2"></i>Passo 1 — Gravação</div>
+      <div class="card-body">
+        {% if pdf_file %}
+        <div class="alert alert-success py-2 small mb-2">
+          <i class="bi bi-check-circle me-1"></i>Gravação disponível: <code>{{ pdf_file }}</code>
+        </div>
+        <a href="/inspecao/download/pdf" class="btn btn-sm btn-outline-secondary w-100 mb-2">
+          <i class="bi bi-file-earmark-pdf me-1"></i>Baixar PDF da gravação
+        </a>
+        {% else %}
+        <div class="alert alert-warning py-2 small">
+          <i class="bi bi-exclamation-triangle me-1"></i>Nenhuma gravação encontrada.
+        </div>
+        {% endif %}
+        <p class="text-muted small">Clique em Gravar para abrir o navegador. Use a funcionalidade normalmente e feche a janela para finalizar.</p>
+        <form method="post" action="/inspecao/gravar" data-loading="Aguardando gravação… feche o navegador para finalizar.">
+          <button class="btn btn-outline-primary w-100">
+            <i class="bi bi-record-circle me-1"></i>Gravar funcionalidade
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Passo 2: Inspeção -->
+    <div class="card">
+      <div class="card-header"><i class="bi bi-robot me-2"></i>Passo 2 — Inspeção com IA</div>
+      <div class="card-body">
+        {% if not pdf_file %}
+        <p class="text-muted small">Realize a gravação primeiro.</p>
+        {% else %}
+        <form method="post" action="/inspecao/executar"
+          data-loading="Analisando com o agente de IA… pode levar 30-60 segundos.">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Comentário do tester (opcional)</label>
+            <textarea name="tester_comment" class="form-control form-control-sm" rows="3"
+              placeholder="Descreva pontos específicos para o agente observar, ou deixe em branco para inspeção geral."></textarea>
+          </div>
+          <button class="btn btn-primary w-100">
+            <i class="bi bi-play-fill me-1"></i>Executar inspeção
+          </button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Coluna direita: histórico -->
+  <div class="col-md-7">
+    <div class="card">
+      <div class="card-header"><i class="bi bi-clock-history me-2"></i>Histórico de inspeções ({{ execucoes|length }})</div>
+      <div class="card-body p-0">
+        {% if execucoes %}
+        <div class="accordion accordion-flush" id="histAcc">
+          {% for ex in execucoes %}
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button {% if not loop.first %}collapsed{% endif %} small py-2"
+                type="button" data-bs-toggle="collapse" data-bs-target="#ex{{ loop.index }}">
+                <i class="bi bi-search me-2 text-primary"></i>
+                Execução {{ execucoes|length - loop.index0 }}
+                &nbsp;<span class="text-muted">{{ ex.created_at[:19]|replace('T',' ') }}</span>
+              </button>
+            </h2>
+            <div id="ex{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}">
+              <div class="accordion-body small">
+                <pre style="white-space:pre-wrap;font-size:.8rem">{{ ex.result_text }}</pre>
+                {% if ex.result_text %}
+                <a href="/inspecao/download/resultado/{{ ex.id }}"
+                   class="btn btn-sm btn-outline-secondary mt-2">
+                  <i class="bi bi-download me-1"></i>Baixar resultado (.txt)
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="p-3 text-muted small text-center">Nenhuma inspeção executada ainda.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if comments %}
+    <div class="card mt-3">
+      <div class="card-header"><i class="bi bi-chat-left-text me-2"></i>Comentários</div>
+      <div class="list-group list-group-flush">
+        {% for c in comments %}
+        <div class="list-group-item small">
+          <div class="fw-semibold text-muted mb-1">{{ c.author }} · {{ c.created_at[:10] }}</div>
+          <div style="white-space:pre-wrap">{{ c.content }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+{% set active_page = "requisitos" %}
+
+{% block title %}Requisitos — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-list-check me-2"></i>Requisitos Funcionais
+  <small class="fs-6 text-muted fw-normal ms-2">{{ project_name }}</small>
+</div>
+
+<!-- Criar requisito -->
+<div class="card mb-3">
+  <div class="card-header" data-bs-toggle="collapse" data-bs-target="#formReq" style="cursor:pointer">
+    <i class="bi bi-plus-circle me-2"></i>Criar requisito funcional
+    <i class="bi bi-chevron-down float-end"></i>
+  </div>
+  <div class="collapse {% if not reqs or req_form_data %}show{% endif %}" id="formReq">
+    <div class="card-body">
+      <div class="alert alert-light border small mb-3">
+        <strong>Formato ARO:</strong> <em>"O &lt;Ator&gt; &lt;verbo&gt; &lt;objeto&gt; &lt;complemento&gt;"</em><br>
+        Exemplo: <em>O usuário pesquisa informações na internet utilizando o campo de busca</em>
+      </div>
+      <form method="post" action="/requisitos" data-loading="Validando formato ARO com agente…">
+        <input type="hidden" name="action" value="create_req">
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label fw-semibold">Nome do requisito (ARO) <span class="text-danger">*</span></label>
+            <input name="name" class="form-control"
+              placeholder="O usuário pesquisa informações na internet utilizando o campo de busca"
+              value="{{ req_form_data.name if req_form_data else '' }}" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">URL da funcionalidade <span class="text-danger">*</span></label>
+            <input name="url" type="url" class="form-control" placeholder="https://exemplo.com/"
+              value="{{ req_form_data.url if req_form_data else '' }}" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Personas associadas</label>
+            <select name="persona_ids" class="form-select" multiple>
+              {% for p in personas %}
+              <option value="{{ p.id }}"
+                {% if req_form_data and p.id in req_form_data.persona_ids %}selected{% endif %}>
+                {{ p.name }}
+              </option>
+              {% endfor %}
+            </select>
+            <div class="form-text">Segure Ctrl para selecionar várias.</div>
+          </div>
+        </div>
+        <button class="btn btn-primary mt-3"><i class="bi bi-plus me-1"></i>Criar requisito</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de requisitos -->
+{% if reqs %}
+{% for r in reqs %}
+<div class="card mb-3 {% if r.active %}border-primary border-2{% endif %}">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>
+      {% if r.active %}<i class="bi bi-check-circle-fill text-primary me-2"></i>{% endif %}
+      <strong>{{ r.name }}</strong>
+    </span>
+    <div class="d-flex gap-1">
+      <a href="{{ r.url }}" target="_blank" class="btn btn-sm btn-outline-secondary" title="Abrir URL">
+        <i class="bi bi-box-arrow-up-right"></i>
+      </a>
+      <button class="btn btn-sm btn-outline-secondary" title="Editar"
+        data-bs-toggle="modal" data-bs-target="#modalEditR{{ loop.index }}">
+        <i class="bi bi-pencil"></i>
+      </button>
+      <button class="btn btn-sm btn-outline-danger" title="Excluir"
+        data-bs-toggle="modal" data-bs-target="#modalDelR{{ loop.index }}">
+        <i class="bi bi-trash"></i>
+      </button>
+      <form method="post" action="/requisitos/{{ r.id }}/ativar">
+        <button class="btn btn-sm {% if r.active %}btn-primary{% else %}btn-outline-primary{% endif %}"
+          {% if r.active %}disabled{% endif %}>
+          {% if r.active %}Ativo{% else %}Selecionar{% endif %}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card-body small">
+    {% if r.personas %}
+    <p class="mb-2"><i class="bi bi-person me-1"></i>
+      {% for p in r.personas %}<span class="badge bg-secondary me-1">{{ p.name }}</span>{% endfor %}
+    </p>
+    {% endif %}
+
+    <!-- Critérios de aceite -->
+    <div class="mt-1">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="fw-semibold"><i class="bi bi-check2-square me-1"></i>Critérios de aceite ({{ r.criteria|length }})</span>
+        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse"
+          data-bs-target="#ac-{{ r.id }}">+ Adicionar</button>
+      </div>
+
+      {% for ac in r.criteria %}
+      <div class="border rounded p-2 mb-2 bg-white">
+        <div class="d-flex justify-content-between align-items-start gap-2">
+          <pre class="mb-0 flex-grow-1" style="white-space:pre-wrap;font-size:.8rem">{{ ac.content }}</pre>
+          <div class="d-flex gap-1 flex-shrink-0">
+            <button class="btn btn-sm btn-outline-secondary py-0" title="Editar"
+              data-bs-toggle="modal" data-bs-target="#modalEditAC{{ loop.index }}_{{ r.id[:6] }}">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-danger py-0" title="Excluir"
+              data-bs-toggle="modal" data-bs-target="#modalDelAC{{ loop.index }}_{{ r.id[:6] }}">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+        <p class="text-muted mb-0" style="font-size:.72rem">por {{ ac.author }} · {{ ac.created_at[:10] }}</p>
+      </div>
+
+      <!-- Modal Editar Critério -->
+      <div class="modal fade" id="modalEditAC{{ loop.index }}_{{ r.id[:6] }}" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form method="post" action="/criterios/{{ ac.id }}/editar"
+              data-loading="Validando formato Gherkin…">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-pencil me-2"></i>Editar critério de aceite</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-light border small mb-2">
+                  <code>Given</code> &lt;contexto&gt; · <code>When</code> &lt;ação&gt; · <code>Then</code> &lt;resultado&gt;
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Critério <span class="text-danger">*</span></label>
+                  <textarea name="content" class="form-control font-monospace" rows="4" required>{{ ac.content }}</textarea>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label fw-semibold">Autor</label>
+                  <input name="author" class="form-control" value="{{ ac.author }}">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Deletar Critério -->
+      <div class="modal fade" id="modalDelAC{{ loop.index }}_{{ r.id[:6] }}" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+              <h5 class="modal-title">Confirmar exclusão</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body small">Excluir este critério de aceite?</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+              <form method="post" action="/criterios/{{ ac.id }}/deletar">
+                <button class="btn btn-danger btn-sm">Excluir</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- Form adicionar critério -->
+      {% set ac_open = ac_open_req_id == r.id %}
+      <div class="collapse {% if ac_open %}show{% endif %}" id="ac-{{ r.id }}">
+        <div class="border rounded p-3 bg-light mt-2">
+          <div class="alert alert-light border small mb-2">
+            <strong>Formato Gherkin:</strong><br>
+            <code>Given</code> &lt;contexto&gt;<br>
+            <code>When</code> &lt;ação do usuário&gt;<br>
+            <code>Then</code> &lt;resultado esperado&gt;
+          </div>
+          <form method="post" action="/requisitos" data-loading="Validando formato Gherkin…">
+            <input type="hidden" name="action" value="create_ac">
+            <input type="hidden" name="req_id" value="{{ r.id }}">
+            <div class="mb-2">
+              <textarea name="content" class="form-control font-monospace" rows="4"
+                placeholder="Given que o usuário está na página inicial&#10;When o usuário digita e pressiona Enter&#10;Then o sistema exibe resultados relevantes"
+                required>{{ ac_form_data.content if ac_open and ac_form_data else '' }}</textarea>
+            </div>
+            <div class="mb-2">
+              <input name="author" class="form-control form-control-sm" placeholder="Autor"
+                value="{{ ac_form_data.author if ac_open and ac_form_data else 'Tester' }}">
+            </div>
+            <button class="btn btn-sm btn-primary">Adicionar critério</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer text-muted" style="font-size:.75rem">
+    <i class="bi bi-link-45deg me-1"></i>{{ r.url }}
+    &nbsp;·&nbsp;<i class="bi bi-clock me-1"></i>{{ r.get('created_at', '')[:10] }}
+  </div>
+</div>
+
+<!-- Modal Editar Requisito -->
+<div class="modal fade" id="modalEditR{{ loop.index }}" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form method="post" action="/requisitos/{{ r.id }}/editar"
+        data-loading="Validando formato ARO com agente…">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-pencil me-2"></i>Editar requisito</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-light border small mb-3">
+            <strong>Formato ARO:</strong> <em>O &lt;Ator&gt; &lt;verbo&gt; &lt;objeto&gt; &lt;complemento&gt;</em>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Nome (ARO) <span class="text-danger">*</span></label>
+            <input name="name" class="form-control" value="{{ r.name }}" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">URL <span class="text-danger">*</span></label>
+            <input name="url" type="url" class="form-control" value="{{ r.url }}" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label fw-semibold">Personas associadas</label>
+            <select name="persona_ids" class="form-select" multiple>
+              {% for p in personas %}
+              <option value="{{ p.id }}"
+                {% if p.id in (r.personas | map(attribute='id') | list) %}selected{% endif %}>
+                {{ p.name }}
+              </option>
+              {% endfor %}
+            </select>
+            <div class="form-text">Segure Ctrl para selecionar várias.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Deletar Requisito -->
+<div class="modal fade" id="modalDelR{{ loop.index }}" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Confirmar exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small">Excluir o requisito <strong>{{ r.name[:60] }}…</strong>?</p>
+        <p class="text-danger small">Isso também excluirá os critérios de aceite e todo o histórico deste requisito.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <form method="post" action="/requisitos/{{ r.id }}/deletar">
+          <button class="btn btn-danger btn-sm">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% else %}
+<div class="text-center text-muted py-5">
+  <i class="bi bi-list-check fs-1 d-block mb-2"></i>
+  Nenhum requisito cadastrado para este projeto.
+</div>
+{% endif %}
+{% endblock %}

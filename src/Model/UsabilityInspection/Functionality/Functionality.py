@@ -34,7 +34,7 @@ class Funcionality:
         
         final_text = ""
         for comment in self.__comments:
-            final_text = final_text + f"{comment.get_id()} | {comment.get_content} | {comment.get_author()} | {comment.get_timestamp()}\n"
+            final_text = final_text + f"{comment.get_id()} | {comment.get_content()} | {comment.get_author()} | {comment.get_timestamp()}\n"
         return final_text
 
     def add_acceptance_criteria(self, id: str, description:str,author:str, timestamp: str):
@@ -44,5 +44,5 @@ class Funcionality:
         
         final_text = ""
         for acceptance_criteria in self.__acceptance_criteria:
-            final_text = final_text + f"{acceptance_criteria.get_id()} | {acceptance_criteria.get_content} | {acceptance_criteria.get_author()} | {acceptance_criteria.get_timestamp()}\n"
+            final_text = final_text + f"{acceptance_criteria.get_id()} | {acceptance_criteria.get_content()} | {acceptance_criteria.get_author()} | {acceptance_criteria.get_timestamp()}\n"
         return final_text

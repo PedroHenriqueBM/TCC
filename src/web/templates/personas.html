@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% set active_page = "personas" %}
+
+{% block title %}Personas — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-person-badge me-2"></i>Personas
+  <small class="fs-6 text-muted fw-normal ms-2">{{ project_name }}</small>
+</div>
+
+<!-- Formulário de criação -->
+<div class="card mb-4">
+  <div class="card-header" data-bs-toggle="collapse" data-bs-target="#formPersona" style="cursor:pointer">
+    <i class="bi bi-plus-circle me-2"></i>Criar nova persona
+    <i class="bi bi-chevron-down float-end"></i>
+  </div>
+  <div class="collapse {% if not personas or form_data %}show{% endif %}" id="formPersona">
+    <div class="card-body">
+      <p class="text-muted small">O agente valida todos os campos. Use linguagem clara e específica ao contexto do sistema.</p>
+      <form method="post" action="/personas" data-loading="Validando persona com agente de conformidade…">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+            <input name="name" class="form-control" placeholder="Ana Desenvolvedora"
+              value="{{ form_data.name if form_data else '' }}" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Atributos-chave <span class="text-danger">*</span></label>
+            <input name="key_attributes" class="form-control" placeholder="Desenvolvedora sênior, 28 anos, alta fluência tecnológica."
+              value="{{ form_data.key_attributes if form_data else '' }}" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label fw-semibold">Descrição <span class="text-danger">*</span></label>
+            <textarea name="description" class="form-control" rows="2"
+              placeholder="Profissional de TI que usa mecanismos de busca para pesquisa técnica diária." required>{{ form_data.description if form_data else '' }}</textarea>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Oportunidades <span class="text-danger">*</span></label>
+            <textarea name="opportunities" class="form-control" rows="2"
+              placeholder="O sistema pode ajudar Ana a encontrar documentação rapidamente." required>{{ form_data.opportunities if form_data else '' }}</textarea>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Necessidades <span class="text-danger">*</span></label>
+            <textarea name="needs" class="form-control" rows="2"
+              placeholder="Busca rápida e resultados precisos para termos técnicos." required>{{ form_data.needs if form_data else '' }}</textarea>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Desafios <span class="text-danger">*</span></label>
+            <textarea name="challenges" class="form-control" rows="2"
+              placeholder="Resultados pouco relevantes para termos específicos de programação." required>{{ form_data.challenges if form_data else '' }}</textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary mt-3"><i class="bi bi-plus me-1"></i>Criar persona</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lista -->
+{% if personas %}
+<div class="row g-3">
+  {% for p in personas %}
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-person-circle me-2"></i>{{ p.name }}</span>
+        <div class="d-flex gap-1">
+          <button class="btn btn-sm btn-outline-secondary"
+            data-bs-toggle="modal" data-bs-target="#modalEditP{{ loop.index }}">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-sm btn-outline-danger"
+            data-bs-toggle="modal" data-bs-target="#modalDelP{{ loop.index }}">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body small">
+        <dl class="row mb-0">
+          <dt class="col-sm-4">Descrição</dt><dd class="col-sm-8">{{ p.description }}</dd>
+          <dt class="col-sm-4">Atributos</dt><dd class="col-sm-8">{{ p.key_attributes }}</dd>
+          <dt class="col-sm-4">Necessidades</dt><dd class="col-sm-8">{{ p.needs }}</dd>
+          <dt class="col-sm-4">Oportunidades</dt><dd class="col-sm-8">{{ p.opportunities }}</dd>
+          <dt class="col-sm-4">Desafios</dt><dd class="col-sm-8">{{ p.challenges }}</dd>
+        </dl>
+      </div>
+      <div class="card-footer text-muted small">
+        <i class="bi bi-clock me-1"></i>{{ p.get('created_at', '')[:10] }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Editar Persona -->
+  <div class="modal fade" id="modalEditP{{ loop.index }}" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form method="post" action="/personas/{{ p.id }}/editar"
+          data-loading="Validando persona com agente de conformidade…">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="bi bi-pencil me-2"></i>Editar persona</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+                <input name="name" class="form-control" value="{{ p.name }}" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Atributos-chave <span class="text-danger">*</span></label>
+                <input name="key_attributes" class="form-control" value="{{ p.key_attributes }}" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Descrição <span class="text-danger">*</span></label>
+                <textarea name="description" class="form-control" rows="2" required>{{ p.description }}</textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Oportunidades <span class="text-danger">*</span></label>
+                <textarea name="opportunities" class="form-control" rows="2" required>{{ p.opportunities }}</textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Necessidades <span class="text-danger">*</span></label>
+                <textarea name="needs" class="form-control" rows="2" required>{{ p.needs }}</textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Desafios <span class="text-danger">*</span></label>
+                <textarea name="challenges" class="form-control" rows="2" required>{{ p.challenges }}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary">Salvar alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Deletar Persona -->
+  <div class="modal fade" id="modalDelP{{ loop.index }}" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Confirmar exclusão</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Excluir persona <strong>{{ p.name }}</strong>?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <form method="post" action="/personas/{{ p.id }}/deletar">
+            <button class="btn btn-danger btn-sm">Excluir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center text-muted py-5">
+  <i class="bi bi-person-badge fs-1 d-block mb-2"></i>
+  Nenhuma persona cadastrada para este projeto.
+</div>
+{% endif %}
+{% endblock %}

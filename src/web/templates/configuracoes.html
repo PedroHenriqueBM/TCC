@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% set active_page = "configuracoes" %}
+
+{% block title %}Configurações — QA com IA{% endblock %}
+
+{% block content %}
+<div class="page-title"><i class="bi bi-gear me-2"></i>Configurações</div>
+
+<div class="row g-4" style="max-width:680px">
+
+  <!-- OpenAI API Key -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center gap-2">
+        <i class="bi bi-key"></i>Chave da API OpenAI
+        {% if has_key %}
+        <span class="badge bg-success ms-auto">Configurada</span>
+        {% else %}
+        <span class="badge bg-danger ms-auto">Não configurada</span>
+        {% endif %}
+      </div>
+      <div class="card-body">
+
+        {% if has_key %}
+        <div class="alert alert-success py-2 small mb-3">
+          <i class="bi bi-check-circle me-1"></i>
+          Chave ativa: <code>{{ masked_key }}</code>
+        </div>
+        {% else %}
+        <div class="alert alert-warning py-2 small mb-3">
+          <i class="bi bi-exclamation-triangle me-1"></i>
+          Nenhuma chave configurada. Os agentes de IA não funcionarão sem ela.
+        </div>
+        {% endif %}
+
+        <form method="post" action="/configuracoes">
+          <input type="hidden" name="action" value="save_api_key">
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              {% if has_key %}Substituir chave{% else %}Adicionar chave{% endif %}
+            </label>
+            <div class="input-group">
+              <input type="password" name="openai_api_key" id="apiKeyInput"
+                     class="form-control font-monospace"
+                     placeholder="sk-proj-..."
+                     autocomplete="off"
+                     required>
+              <button type="button" class="btn btn-outline-secondary"
+                      onclick="toggleVisibility()" title="Mostrar/ocultar">
+                <i class="bi bi-eye" id="eyeIcon"></i>
+              </button>
+            </div>
+            <div class="form-text">
+              Obtenha sua chave em
+              <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">
+                platform.openai.com/api-keys
+              </a>. A chave começa com <code>sk-</code>.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-floppy me-1"></i>Salvar chave
+          </button>
+        </form>
+
+        {% if has_key %}
+        <hr class="my-3">
+        <form method="post" action="/configuracoes"
+              onsubmit="return confirm('Remover a chave? Os agentes de IA deixarão de funcionar.')">
+          <input type="hidden" name="action" value="remove_api_key">
+          <button type="submit" class="btn btn-sm btn-outline-danger">
+            <i class="bi bi-trash me-1"></i>Remover chave
+          </button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompts dos agentes de conformidade -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center gap-2">
+        <i class="bi bi-robot"></i>Prompts dos Agentes de Conformidade
+        <span class="badge bg-secondary ms-auto">Avançado</span>
+      </div>
+      <div class="card-body pb-1">
+        <p class="text-muted small mb-3">
+          Personalize as instruções de cada agente. Deixe em branco para usar o prompt padrão.
+        </p>
+        <div class="accordion accordion-flush" id="policiesAcc">
+          {% for p in policies %}
+          <div class="accordion-item border rounded mb-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed small py-2 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#pol{{ loop.index }}">
+                <i class="bi bi-chat-square-text me-2 text-secondary"></i>
+                {{ p.label }}
+                {% if p.current %}
+                <span class="badge bg-warning text-dark ms-2" style="font-size:.65rem">Personalizado</span>
+                {% endif %}
+              </button>
+            </h2>
+            <div id="pol{{ loop.index }}" class="accordion-collapse collapse">
+              <div class="accordion-body pt-2">
+                <form method="post" action="/configuracoes" class="mb-2">
+                  <input type="hidden" name="action" value="save_policy">
+                  <input type="hidden" name="policy_key" value="{{ p.key }}">
+                  <label class="form-label small fw-semibold">Prompt do sistema</label>
+                  <textarea name="policy_value" class="form-control form-control-sm font-monospace mb-2"
+                    rows="5" style="font-size:.78rem">{{ p.current if p.current else p.default }}</textarea>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                      <i class="bi bi-floppy me-1"></i>Salvar
+                    </button>
+                    {% if p.current %}
+                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                      data-default="{{ p.default | e }}"
+                      onclick="resetToDefault(this)">
+                      <i class="bi bi-arrow-counterclockwise me-1"></i>Restaurar padrão
+                    </button>
+                    {% endif %}
+                  </div>
+                </form>
+                {% if p.current %}
+                <form method="post" action="/configuracoes"
+                  onsubmit="return confirm('Restaurar o prompt padrão para {{ p.label }}?')">
+                  <input type="hidden" name="action" value="reset_policy">
+                  <input type="hidden" name="policy_key" value="{{ p.key }}">
+                  <button type="submit" class="btn btn-sm btn-outline-danger">
+                    <i class="bi bi-trash me-1"></i>Remover personalização
+                  </button>
+                </form>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Informações da aplicação -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header"><i class="bi bi-info-circle me-2"></i>Sobre</div>
+      <div class="card-body small text-muted">
+        <p class="mb-1"><strong>QA com IA</strong> — ferramenta de automação de qualidade de software</p>
+        <p class="mb-1">Combina inspeção de usabilidade e teste de sistema via agentes generativos.</p>
+        <p class="mb-0 mt-2">
+          <i class="bi bi-database me-1"></i>Banco de dados: <code>src/Storage/tcc.db</code><br>
+          <i class="bi bi-folder me-1"></i>Artefatos: <code>src/Storage/&lt;requisito_id&gt;/</code>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleVisibility() {
+  const input = document.getElementById('apiKeyInput');
+  const icon  = document.getElementById('eyeIcon');
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.className = 'bi bi-eye-slash';
+  } else {
+    input.type = 'password';
+    icon.className = 'bi bi-eye';
+  }
+}
+function resetToDefault(btn) {
+  const textarea = btn.closest('form').querySelector('textarea');
+  textarea.value = btn.dataset.default;
+}
+</script>
+{% endblock %}
